@@ -1,0 +1,207 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,4pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\setlength\parindent{0pt}
+
+% Define a custom command for skill chips
+\newcommand{\skillchip}[1]{
+    \tikz[baseline]{
+        \node[draw=lightgray, fill=white, rounded corners=5pt, anchor=base, inner sep=1.5mm, font=\footnotesize\color{black}] {#1};
+    } % Adjust space between chips
+}
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[scale=0.91]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\definecolor{sectioncolor}{RGB}{30,144,255} % Dodger Blue
+\titleformat{\section}{\Large\scshape\raggedright\color{sectioncolor}}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{4pt}{7pt}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Vishal Singh} \\[7.5pt]
+\href{https://github.com/vishalsingh17-web2}{\raisebox{-0.05\height}\faGithub\ vishalsingh17-web2} \ $|$ \ 
+\href{https://linkedin.com/in/vishal-singh-1703}{\raisebox{-0.05\height}\faLinkedin\ vishal-singh-1703} \ $|$ \ 
+\href{https://vishalportfolio1703.vercel.app/}{\raisebox{-0.05\height}\faGlobe \ My Portfolio} \ $|$ \ 
+\href{mailto:vishal.workcontact@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ vishal.workcontact@gmail.com} \ $|$ \ 
+\href{tel:+917084324572}{\raisebox{-0.05\height}\faMobile \ +917084324572} \ $|$ \ 
+\href{https://leetcode.com/Vishal_Singh_17/}{\raisebox{-0.05\height}\faCode \ LeetCode} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{\small Android Developer} \hfill \small Oct 2022 - present \\
+\text{\small AFFINSYS AI PVT LTD} \text{(Internship + Full Time)} \\
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}
+        \item[--] \small Led development of \textbf{mobile apps from scratch} using React Native in Typescript.
+        \item[--] \small Worked on project \textbf{autogen}, a backend driven form builder using JSON rendering, which \textbf{reduced} the overall \textbf{development time} by 60\%.
+        \item[--] \small Wrote \textbf{payment processors} for our internal services, handled retries and failures using state observer. 
+        \item[--] \small Build \textbf{CI/CD pipeline} using Github Actions/Fastlane for android application, enhancing build stability.
+        \item[--] \small Worked on \textbf{Native/Turbo modules} to deal with native APIs.
+        \item[--] \small Added security checks to handle \textbf{Frida Injections} and \textbf{SSL Pinning} to prevent reverse engineering.
+        \item[--] \small Added internationalization support for \textbf{multiple languages} in the app.
+        \item[--] \small Worked closely with vision camera and ML Kit to implement \textbf{QR code scanning} and \textbf{face detection} features.
+        \item[--] \small Added \textbf{OTA updates} and \textbf{Firebase Crashlytics/Sentry} for crash reporting.
+        \item[--] \small Implemented \textbf{deep linking, notification system} for user engagement.
+    
+    \end{itemize}
+    \textbf{Key Learnings --}
+    \skillchip{React} \skillchip{React Native} \skillchip{Redux/RTK Query}  \skillchip{Fastlane} \skillchip{Reducers/Context API} \skillchip{NPM Packages} \skillchip{Push notification} \skillchip{Native modules} \skillchip{CI/CD} \skillchip{Typescript/Javascript} \skillchip{JEST} \skillchip{Webviews/PWA}
+    
+\end{minipage}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{\small Flutter Developer} \hfill \small Jan 2022 - April 2022 \\
+\text{\small TREEVED} \text{(Internship)} \\
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}
+        \item[--] \small Debugged, managed, and created new screens and features for the app
+        \item[--] \small Learned \textbf{state management} in Flutter using \textbf{Provider and Bloc package} to effectively manage app resources
+        \item[--] \small Developed a Flutter/Dart-based \textbf{chrome extension}
+        \item[--] \small Added \textbf{Method channels} to call the native APIs on android side.
+        \item[--] \small Made API calls using the \textbf{repository pattern} with proper implementation of abstract classes
+    \end{itemize}
+    \textbf{Key Learnings --}
+    \skillchip{Flutter bloc/Provider} \skillchip{Chrome Extension} \skillchip{Method channels} \skillchip{Material design} \skillchip{Firebase}
+\end{minipage}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{\small Flutter Developer} \hfill \small Nov 2021 - Jan 2022 \\
+\text{\small CRUV.} \text{(Internship)} \\
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}
+        \item[--] \small Implemented \textbf{pixel-perfect UI} designs
+        \item[--] \small Utilized \textbf{isolates} to enhance app performance
+        \item[--] \small Employed \textbf{isolates for calling APIs} in separate memory threads
+        \item[--] \small Managed \textbf{heavy background tasks} such as video downloading and running complex algorithms
+    \end{itemize}
+    \textbf{Key Learnings --}
+    \skillchip{Flutter/Dart} \skillchip{UI Design/Building} \skillchip{Isolates}
+\end{minipage}
+\end{tabularx}
+
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\href{https://github.com/vishalsingh17-web2/IoT-domain}{Fall Detection} \\
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}
+        \item[--] \small Project based on ML/DL, which detects fall, using smart phone sensors.
+        \item[--] \small Created our own dataset using flutter app and on-board sensors of smartphone (Accelerometer, gyroscope and magnetometer)
+        \item[--] \small Analyzed it with different machine learning and deep learning algorithms.
+        \item[--] \small Best accuracy was achieved by Random Forest classifier of 99.25\%
+        \item[--] \small Flutter app to predict the fall and other daily life activities (Walking, sitting, standing, running).
+    \end{itemize}
+\end{minipage}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\href{https://github.com/vishalsingh17-web2/IoT-Project}{IoT Smart Farming} \\
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}
+        \item[--] \small Implemented it with using Node-MCU, flutter and firebase.
+        \item[--] \small Collected data from sensors (DHT11 and Soil moisture sensor), and stored
+them on RLTD of firebase
+        \item[--] \small fetched the data to our app based on flutter, also generated alerts and controlled the motor-pump using our app.
+    \end{itemize}
+\end{minipage}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\href{https://github.com/vishalsingh17-web2/chatBuzz/tree/app}{Chat Application (Flutter)} \\
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}
+        \item[--] \small Project based on Flutter/dart with Google authentication
+        \item[--] \small Used Firestore to store data, and user information.
+        \item[--] \small Supports text-based messages including emojis, images and multi-line text.
+    \end{itemize}
+\end{minipage}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{\small Bachelor of Technology, (ECE)} \text{Vellore institute of technology, Vellore} & \hfill \small (GPA: 9.09/10.0)\\
+\textbf{\small HSC/Intermediate (Class 12th)} \text{Shah Faiz Public School} & \hfill \small (Percent: 91.6 \%) \\
+\textbf{\small HSC (Class 10th)} \text{Shah Faiz Public School} & \hfill \small (GPA: 9.6/10.0)
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Frameworks & \normalsize{React, React native, Flutter, Jetpack compose, Android} \\
+Programming Skills &  \normalsize{Dart, Python, C, C++, Javascript, Typescript}\\
+Essentials  &  \normalsize{Git and GitHub/Gitlab, Postman, Swagger, Jupyter-Notebook}\\  
+\end{tabularx}
+
+\end{document}
